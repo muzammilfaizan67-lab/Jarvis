@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Faizan Muzammil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #64748b;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #3b82f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #ffffff;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light) 0%, #e2e8f0 100%);
+            padding-top: 80px;
+        }
+
+        .hero-content img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Experience & Projects */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .card .date {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Contact */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">FM.</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content">
+            <img src="https://via.placeholder.com/180" alt="Faizan Muzammil">
+            <h1>Faizan Muzammil</h1>
+            <p>Student | Tech Enthusiast | Trader</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; color: var(--secondary);">
+            I am a 10th-grade student currently based in Sadiqabad, specializing in Computer Science. 
+            Beyond my academic pursuits, I am passionate about exploring the intersection of technology 
+            and finance, with a strong focus on technical analysis and algorithmic trading.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h4>Trading</h4>
+                <p>Technical Analysis & Crypto Markets</p>
+            </div>
+            <div class="skill-card">
+                <h4>Programming</h4>
+                <p>Python, Pine Script & Three.js</p>
+            </div>
+            <div class="skill-card">
+                <h4>Creative</h4>
+                <p>AI Generation & Digital Art</p>
+            </div>
+            <div class="skill-card">
+                <h4>Hardware</h4>
+                <p>System Troubleshooting</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Technical Analysis & Trading</h3>
+                <span class="date">Ongoing</span>
+                <p>Active trading on Bybit, WEEX, and MEXC. Applying Stochastic, RSI, and MACD indicators to spot and futures markets.</p>
+            </div>
+            <div class="card">
+                <h3>Digital Content Creation</h3>
+                <span class="date">Ongoing</span>
+                <p>Utilizing generative AI tools for high-resolution cinematic imagery and custom music production in Urdu and Punjabi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Edith AI Assistant</h3>
+                <p>A Python-based voice-controlled mobile assistant designed to handle device functions via voice commands.</p>
+                <a href="#" style="color: var(--primary); text-decoration: none; font-size: 0.875rem;">View Code →</a>
+            </div>
+            <div class="card">
+                <h3>3D Gesture System</h3>
+                <p>An interactive particle system built with Three.js that responds to real-time hand gestures via camera tracking.</p>
+                <a href="#" style="color: var(--primary); text-decoration: none; font-size: 0.875rem;">Live Demo →</a>
+            </div>
+            <div class="card">
+                <h3>Pine Script Indicators</h3>
+                <p>Custom TradingView scripts including "Bullish Engulfing" strategies for automated chart analysis.</p>
+                <a href="#" style="color: var(--primary); text-decoration: none; font-size: 0.875rem;">Repository →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <p>I'm always open to discussing new projects, trading strategies, or tech opportunities.</p>
+            <div class="social-links">
+                <a href="mailto:your.email@example.com" class="btn">Email Me</a>
+                <a href="https://linkedin.com/in/placeholder" class="btn" style="background: #0077b5;">LinkedIn</a>
+                <a href="https://github.com/placeholder" class="btn" style="background: #333;">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Faizan Muzammil. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
